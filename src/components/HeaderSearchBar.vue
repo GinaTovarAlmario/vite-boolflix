@@ -7,7 +7,10 @@ export default{
         }
     },
     methods:{
-        
+        showItem(information){
+            this.$emit('searchItem',information)
+            console.log('sono il figlio')
+        }
     }
 }
 </script>
@@ -15,7 +18,7 @@ export default{
 <template>
     <div class="search">
         <input type="text" v-model="searchedItem">
-        <button>cerca film</button>
+        <button @click="showItem(searchedItem)">cerca film</button>
     </div>
 </template>
 

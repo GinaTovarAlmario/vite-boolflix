@@ -10,13 +10,18 @@ export default{
     HeaderSearchBar
   },
   methods:{
+    searchElement(message){
+      console.log(`${message}`);
+
+    }
 
   }
 }
 </script>
 
 <template>
-  <HeaderSearchBar/>
+  <HeaderSearchBar
+    @searchItem="searchElement"/>
 </template>
 
 <style lang="scss">
