@@ -2,15 +2,19 @@
 export default{
     data(){
         return{
+            searchedItem:'',
 
         }
+    },
+    methods:{
+        
     }
 }
 </script>
 
 <template>
     <div class="search">
-        <input type="text">
+        <input type="text" v-model="searchedItem">
         <button>cerca film</button>
     </div>
 </template>

@@ -8,6 +8,9 @@ export default{
   },
   components:{
     HeaderSearchBar
+  },
+  methods:{
+
   }
 }
 </script>
