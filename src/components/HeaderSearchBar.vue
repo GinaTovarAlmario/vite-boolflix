@@ -9,7 +9,6 @@ export default{
     methods:{
         showItem(information){
             this.$emit('searchItem',information)
-            console.log('sono il figlio')
         }
     }
 }
