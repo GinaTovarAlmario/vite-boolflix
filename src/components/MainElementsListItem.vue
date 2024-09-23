@@ -4,27 +4,50 @@ export default{
     data(){
         return{
             store,
+            imgUrl:'https://image.tmdb.org/t/p/w342/',
 
         }
-    }
+    },
+   
 }
 </script>
 <template>
-    <li v-for="(item,index) in store.items.results ":key="index">
-        <p>TITOLO: {{ item.title || item.name}}</p>
-        <p>TITOLO ORIGINALE: {{ item.original_title || item.original_name}}</p>
-        <p>ORIGINAL LANGUAGE: {{ item.original_language }}</p>
-        <p>VOTE: {{ item.vote_average }}</p>
-    </li>
+    <div class="col" v-for="(item,index) in store.items.results" :key="index">
+        <div class="card">
+            <img :src="this.imgUrl + item.poster_path" :alt="item.title || item.name">
+            <p>Titolo: 
+                {{ item.title || item.name}}
+            </p>
+            <p>Titolo originale:
+                {{ item.original_title || item.original_name}}
+            </p>
+            <p>lingua originale:
+                {{ item.original_language }}
+            </p>
+            <p>Voto: {{ item.vote_average }}</p>
+        </div>
+    </div>
 </template>
 <style lang="scss" scoped>
-    li{
-      flex-basis: calc(100% / 6 - 5px);
-      padding: 10px 10px;
+    .col{
+        flex-basis: calc(100% / 6 - 10px);
 
-      p{
-        margin-bottom: 5px;
-      }
+        .card{
+            height: 500px;
+            overflow: hidden;
+            width: 100%;
+            border: 1px solid red;
+            font-size: 16px;
+            margin-bottom: 30px;
+            img{
+                width: 100%;
+                height: auto;
+            }
+            
+            p{
+                padding: 5px 10px;
+            }
+        }
+
     }
-
 </style>

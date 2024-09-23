@@ -18,7 +18,7 @@ export default{
 <template>
     <div class="search">
         <input type="text" v-model="store.searchedItem">
-        <button @click="showItem(store.searchedItem)">cerca film</button>
+        <button @click="showItem(store.searchedItem)">cerca</button>
     </div>
 </template>
 
