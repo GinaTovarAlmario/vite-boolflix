@@ -37,7 +37,9 @@ export default{
                 {{ item.original_language }}
             </p>
             <div class="stars-wrapper">
-                <i class="fa-solid fa-star" v-for="n in getNumberStarVote(item.vote_average)"></i>
+                <p>voto:
+                    <i class="fa-solid fa-star" v-for="n in getNumberStarVote(item.vote_average)"></i>
+                </p>
             </div>
         </div>
     </div>
@@ -63,10 +65,8 @@ export default{
                 .stars-wrapper{
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
-                    color: yellow;
-
-
+                    justify-content: center;
+                  
                 }
             }
         
