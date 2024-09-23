@@ -8,7 +8,19 @@ export default{
 
         }
     },
-   
+    methods:{
+        // mi serve un funzione che mi arrotondi il numero del voto ricevuto
+        getNumberStarVote(vote){
+            // se non ho il voto gli fisso il voto a zero
+            if( typeof vote !== 'number'){
+                vote = 0;
+            }
+            let result = vote / 2 ;
+            return Math.ceil(result);
+        },
+       
+    }
+
 }
 </script>
 <template>
@@ -24,7 +36,9 @@ export default{
             <p>lingua originale:
                 {{ item.original_language }}
             </p>
-            <p>Voto: {{ item.vote_average }}</p>
+            <div class="stars-wrapper">
+                <i class="fa-solid fa-star" v-for="n in getNumberStarVote(item.vote_average)"></i>
+            </div>
         </div>
     </div>
 </template>
@@ -33,7 +47,7 @@ export default{
         flex-basis: calc(100% / 6 - 10px);
 
         .card{
-            height: 500px;
+            height: 550px;
             overflow: hidden;
             width: 100%;
             border: 1px solid red;
@@ -46,7 +60,16 @@ export default{
             
             p{
                 padding: 5px 10px;
+                .stars-wrapper{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: yellow;
+
+
+                }
             }
+        
         }
 
     }

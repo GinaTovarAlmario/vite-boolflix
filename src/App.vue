@@ -55,7 +55,5 @@ export default{
 
 <style lang="scss">
 @use "./style/general.scss";
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/solid';
 
 </style>
