@@ -3,7 +3,14 @@ import HeaderSearchBar from './HeaderSearchBar.vue';
 export default{
     data(){
         return{
-
+            navbarList:[
+                {label:'Home',link:'#'},
+                {label:'Serie Tv',link:'#'},
+                {label:'Film',link:'#'},
+                {label:'Originali',link:'#'},
+                {label:'Aggiunti di recente',link:'#'},
+                {label:'La mia lista',link:'#'}
+            ],
         }
 
     },
@@ -20,8 +27,17 @@ export default{
 </script>
 <template>
     <header>
-        <div class="title">
-        BOOLFIX
+        <div class="navbar-logo">
+            <div class="title">
+            BOOLFIX
+            </div>
+            <nav>
+                <ul>
+                    <li v-for="(navbarItem,index) in navbarList" :key="index">
+                        <a :href="navbarItem.link">{{ navbarItem.label }}</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
         <HeaderSearchBar
         @searchItem="showItemSearchBar"
@@ -37,9 +53,23 @@ export default{
         justify-content: space-between;
         padding-left: 20px;
 
-        .title{
-            color: red;
-            font-size: 2rem;
+        .navbar-logo{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            .title{
+                color: red;
+                font-size: 2rem;
+            }
+            nav{
+
+                ul{
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                }
+            }
         }
     }
 </style>

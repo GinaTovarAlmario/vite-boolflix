@@ -52,7 +52,7 @@ export default{
             height: 600px;
             overflow: hidden;
             width: 100%;
-            border: 1px solid black;
+            border: 1px solid white;
             font-size: 16px;
             margin-bottom: 30px;
             img{
