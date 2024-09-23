@@ -49,10 +49,10 @@ export default{
         flex-basis: calc(100% / 6 - 10px);
 
         .card{
-            height: 550px;
+            height: 600px;
             overflow: hidden;
             width: 100%;
-            border: 1px solid red;
+            border: 1px solid black;
             font-size: 16px;
             margin-bottom: 30px;
             img{

@@ -29,6 +29,5 @@ export default{
     justify-content: flex-end;
     gap :10px;
     padding-right: 30px;
-    margin-top: 40px;
 }
 </style>
