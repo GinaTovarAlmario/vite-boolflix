@@ -1,5 +1,5 @@
 <script>
-import HeaderSearchBar from './components/HeaderSearchBar.vue';
+import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import axios from 'axios';
 import { store } from './store';
@@ -13,7 +13,7 @@ export default{
     }
   },
   components:{
-    HeaderSearchBar,
+    AppHeader,
     AppMain,
   },
   methods:{
@@ -48,9 +48,10 @@ export default{
 </script>
 
 <template>
-  <HeaderSearchBar
-    @searchItem="searchElement"/>
-    <AppMain/>
+  <AppHeader
+    @searchItemSearchBar="searchElement"
+  />
+  <AppMain/>
 </template>
 
 <style lang="scss">

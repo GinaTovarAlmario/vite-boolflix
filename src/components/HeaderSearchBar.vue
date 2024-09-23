@@ -1,14 +1,15 @@
 <script>
+import { store } from '../store';
 export default{
     data(){
         return{
-            searchedItem:'',
+            store,
 
         }
     },
     methods:{
         showItem(information){
-            this.$emit('searchItem',information)
+            this.$emit('searchItem',information);
         }
     }
 }
@@ -16,8 +17,8 @@ export default{
 
 <template>
     <div class="search">
-        <input type="text" v-model="searchedItem">
-        <button @click="showItem(searchedItem)">cerca film</button>
+        <input type="text" v-model="store.searchedItem">
+        <button @click="showItem(store.searchedItem)">cerca film</button>
     </div>
 </template>
 
