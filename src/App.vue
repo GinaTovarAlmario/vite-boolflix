@@ -9,7 +9,6 @@ export default{
       apiDbMovie:'https://api.themoviedb.org/3/search/movie',
       store,
 
-
     }
   },
   components:{
