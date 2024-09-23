@@ -6,7 +6,7 @@ import { store } from './store';
 export default{
   data(){
     return{
-      apiDbMovie:'https://api.themoviedb.org/3/search/movie',
+      apiDbUrl:'https://api.themoviedb.org/3/search/multi',
       store,
 
     }
@@ -23,7 +23,7 @@ export default{
     },
     // mi creo un metodo per fare chiamata all' API
     getData(givenWord){
-      axios.get(this.apiDbMovie, {
+      axios.get(this.apiDbUrl, {
         params: {
           api_key: 'f01478f834b029262478254394c4864a',
           query: givenWord,
