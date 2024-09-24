@@ -18,6 +18,8 @@ export default{
                 zh:'zh.gif',
                 it:'it.gif',
                 fr:'fr.gif',
+                hi:'hi.gif',
+                nl:'nl.gif',
             }
             
 
@@ -37,7 +39,8 @@ export default{
             const path = new URL('../assets/img/' + img + '.gif',import.meta.url).href;
             return path;
 
-        }
+        },
+       
         
     }
 }
@@ -46,11 +49,11 @@ export default{
     <div class="col" v-for="(item,index) in store.items.results" :key="index">
         <div class="card">
             <div class="card-img">
-                <img :src="this.imgUrlPoster + item.poster_path " :alt="item.title || item.name">
+                <img :src="this.imgUrlPoster + item.poster_path" :alt="item.title || item.name">
             </div>
             <div class="card-info">
 
-                <h4>Titolo: </h4>
+                <h4 >Titolo: </h4>
                 <span>{{ item.title || item.name}}</span>
 
                 <h4>Titolo originale:</h4>
@@ -89,7 +92,7 @@ export default{
 
                 img{
                     width: 100%;
-                    height: auto;
+                    height: 480px;
                 }
             }
             .card-info{
@@ -119,7 +122,7 @@ export default{
                 } 
                 p{
                     font-size: 12px;
-                    padding: 5px 0;
+                    padding: 5px 10px;
                 }
             } 
         }
