@@ -40,10 +40,7 @@ export default{
             return path;
 
         },
-        getDefaultImg(image){
-            const pathImage= new URL('../assets/img/' + image + '.jpg',import.meta.url).href;
-            return pathImage;
-        }
+       
        
         
     }
@@ -65,7 +62,8 @@ export default{
                 <span>{{ item.original_title || item.original_name}}</span> 
             
                 <h4>Lingua originale:</h4>
-                    <img class="flag" :src="getPathFlag(item.original_language)" alt="..">
+                    <img class="flag" v-if="flagLanguage !== item.original_language" :src="'public/images/flag-none.png'" alt="..">
+                    <img v-else class="flag" :src="getPathFlag(item.original_language)" alt="..">
 
                 <div class="stars-wrapper">
                     <span>Voto:</span>
