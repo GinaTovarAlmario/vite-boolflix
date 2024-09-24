@@ -51,43 +51,41 @@ export default{
             <div class="card-info">
 
                 <h4>Titolo: </h4>
-                <p>{{ item.title || item.name}}</p>
+                <span>{{ item.title || item.name}}</span>
 
                 <h4>Titolo originale:</h4>
-                <p>{{ item.original_title || item.original_name}}</p> 
+                <span>{{ item.original_title || item.original_name}}</span> 
             
-                <h4>lingua originale:</h4>
-                <!-- <div class="flag"> -->
+                <h4>Lingua originale:</h4>
                     <img class="flag" :src="getPathFlag(item.original_language)" alt="..">
-                <!-- </div> -->
 
                 <div class="stars-wrapper">
-                    <h4>voto:</h4>
+                    <span>Voto:</span>
                     <span>
                         <i class="fa-solid fa-star" v-for="n in getNumberStarVote(item.vote_average)" :key="n"></i>
                     </span>
                 </div>
+                <h4>Overview:</h4>
+                <p>{{ item.overview }}</p>
             </div>
         </div>
     </div>
 </template>
 <style lang="scss" scoped>
     .col{
-        flex-basis: calc(100% / 4 - 10px);
-
+        flex-basis: calc(100% / 3 - 10px);
 
         .card{
             overflow: hidden;
-            height: 360px;
+            height: 480px;
             width: 100%;
             border: 1px solid white;
-            font-size: 16px;
             margin-bottom: 30px;
             cursor: pointer;
         
 
             .card-img{
-                height: 360px;
+                height: 480px;
 
                 img{
                     width: 100%;
@@ -99,27 +97,31 @@ export default{
                 display: none;
                 color: white;
                 background-color: black;
-                font-size: 16px;
+                font-size: 14px;
                 text-align: center;
                 h4{
-                    padding: 10px 10px;
+                    font-weight: 900;
+                    padding: 10px 0;
+                    font-weight: 900;
                 }
                 .flag{
-                    height: 20px;
-                     width: 30px;
+                    height: 15px;
+                    width: 20px;
                 }
                 .stars-wrapper{
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    margin-top: 10px;
                     .fa-solid{
                         color: yellow;
                     }
-
+                } 
+                p{
+                    font-size: 12px;
+                    padding: 5px 0;
                 }
-                
-            }
-           
+            } 
         }
         .card:hover{
             .card-img{
