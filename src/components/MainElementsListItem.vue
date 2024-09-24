@@ -5,6 +5,19 @@ export default{
         return{
             store,
             imgUrl:'https://image.tmdb.org/t/p/w342/',
+            flagLanguage:{                
+                de:'de.gif',
+                es:'es.gif',
+                ja:'ja.gif',
+                ko:'ko.gif',
+                pl:'pl.gif',
+                pt:'pt.gif',
+                ru:'ru.gif',
+                tr:'tr.gif',
+                en:'en.gif',
+                zh:'zh.gif',
+            }
+            
 
         }
     },
@@ -18,9 +31,13 @@ export default{
             let result = vote / 2 ;
             return Math.ceil(result);
         },
-       
-    }
+        getPathFlag(img){
+            const path = new URL('../assets/img/' + img + '.gif',import.meta.url).href;
+            return path;
 
+        }
+        
+    }
 }
 </script>
 <template>
@@ -34,11 +51,11 @@ export default{
                 {{ item.original_title || item.original_name}}
             </p>
             <p>lingua originale:
-                {{ item.original_language }}
+                <img class="flag" :src="getPathFlag(item.original_language)" alt="..">
             </p>
             <div class="stars-wrapper">
                 <p>voto:
-                    <i class="fa-solid fa-star" v-for="n in getNumberStarVote(item.vote_average)"></i>
+                    <i class="fa-solid fa-star" v-for="n in getNumberStarVote(item.vote_average)" :key="n"></i>
                 </p>
             </div>
         </div>
@@ -62,6 +79,11 @@ export default{
             
             p{
                 padding: 5px 10px;
+                .flag{
+                    height: 20px;
+                    width: 30px;
+                    margin: 10px 5px;
+                }
                 .stars-wrapper{
                     display: flex;
                     align-items: center;
