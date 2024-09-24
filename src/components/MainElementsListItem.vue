@@ -40,6 +40,10 @@ export default{
             return path;
 
         },
+        getDefaultImg(image){
+            const pathImage= new URL('../assets/img/' + image + '.jpg',import.meta.url).href;
+            return pathImage;
+        }
        
         
     }
@@ -49,7 +53,8 @@ export default{
     <div class="col" v-for="(item,index) in store.items.results" :key="index">
         <div class="card">
             <div class="card-img">
-                <img :src="this.imgUrlPoster + item.poster_path" :alt="item.title || item.name">
+                <img v-if="!item.poster_path" :src="'public/images/placeholder.png'" alt="..">
+                <img v-else :src="this.imgUrlPoster + item.poster_path" :alt="item.title || item.name">
             </div>
             <div class="card-info">
 

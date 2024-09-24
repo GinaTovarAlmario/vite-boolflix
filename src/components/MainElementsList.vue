@@ -15,7 +15,7 @@ export default{
 </script>
 <template>
     <!-- store.items potrebbe essere null data l'impostazione che ho dato -->
-    <div class="row" v-if=" store.items !== null ">
+    <div class="row" v-if=" store.items !== null">
         <MainElementsListItem/>
     </div>
 </template>
